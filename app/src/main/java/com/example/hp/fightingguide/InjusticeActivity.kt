@@ -7,6 +7,6 @@ class InjusticeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_injustice)
+        setContentView(R.layout.item_card_hero_list)
     }
 }
