@@ -31,12 +31,14 @@
                 android:id="@+id/person_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:layout_toEndOf="@+id/person_photo"
                 android:layout_toRightOf="@+id/person_photo"
-                android:paddingLeft="8dp"
-                android:paddingStart="8dp"
-                android:text="BATMAN"
+                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:text="Batman"
                 android:textSize="23sp" />
 
             <TextView
