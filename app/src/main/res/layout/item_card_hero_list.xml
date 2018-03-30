@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv"
         android:layout_width="match_parent"
-        android:layout_height="356dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="6dp"
         app:cardElevation="6dp"
         app:cardPreventCornerOverlap="true"
@@ -47,31 +47,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/person_photo"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="84dp"
                 android:paddingTop="8dp"
                 android:text="Even after he’s been exposed to the world as Batman, Bruce Wayne keeps his vow to avenge his parents’ death by fighting for justice. He refuses to execute his enemies, believing that once he crosses that line, he’s no better than the cowards he battles." />
-
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/textView4"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginEnd="22dp"
-                android:layout_marginRight="22dp"
-                android:ems="10"
-                android:inputType="textMultiLine" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/editText"
-                android:layout_alignStart="@+id/editText"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="28dp"
-                android:layout_marginStart="28dp"
+                android:layout_alignBottom="@+id/person_photo"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="97dp"
                 android:text="Button" />
 
         </RelativeLayout>
