@@ -67,10 +67,10 @@ class DBHelper(private val mContext: Context) : SQLiteOpenHelper(mContext, DB_NA
         //InputStream mInput = mContext.getResources().openRawResource(R.raw.info);
         val mOutput = FileOutputStream(DB_PATH + DB_NAME)
         val mBuffer = ByteArray(1024)
-        val mLength: Int = mInput.read(mBuffer)
-        while (mLength > 0) {
-            mOutput.write(mBuffer, 0, mLength)
-        }
+        var mLength: Int
+       // while ((mLength = mInput.read(mBuffer)) > 0)
+       //     mOutput.write(mBuffer, 0, mLength)
+
         mOutput.flush()
         mOutput.close()
         mInput.close()

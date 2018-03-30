@@ -28,28 +28,28 @@ class InjusticeActivity : AppCompatActivity() {
 //        icon.setBounds(0, 0, icon.intrinsicHeight, icon.intrinsicWidth)
 //        val span = ImageSpan(icon, ImageSpan.ALIGN_BASELINE)
 //        text1.setSpan(span, myIndex, myIndex + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-
+        val mDb: SQLiteDatabase
+        val mDBHelper = DatabaseHelper(this)
+        try {
+            mDBHelper.updateDataBase()
+        } catch (mIOException: IOException) {
+            throw Error("UnableToUpdateDatabase")
+        }
+        try {
+            mDb = mDBHelper.writableDatabase
+        } catch (mSQLException: SQLException) {
+            throw mSQLException
+        }
 
 
         button.setOnClickListener {
-            val mDb: SQLiteDatabase
-            val mDBHelper = DBHelper(this)
-            try {
-                mDBHelper.updateDataBase()
-            } catch (mIOException: IOException) {
-                throw Error("UnableToUpdateDatabase")
-            }
-            try {
-                mDb = mDBHelper.writableDatabase
-            } catch (mSQLException: SQLException) {
-                throw mSQLException
-            }
+
             var product = ""
 
-            val cursor: Cursor = mDb.rawQuery("SELECT *  FROM Injustice2", null)
+            val cursor: Cursor = mDb.rawQuery("SELECT  Name  FROM Injustice2 ", null)
             cursor.moveToFirst()
             while (!cursor.isAfterLast) {
-                product += cursor.getString(1) + " | "
+                product += cursor.getString(0) + " | "
                 cursor.moveToNext()
 
                 Log.wtf("qwe", product)
