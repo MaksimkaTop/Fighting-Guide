@@ -6,7 +6,6 @@ import android.text.SpannableString
 import android.text.style.ImageSpan
 import android.widget.TextView
 import com.example.hp.fightingguide.R
-import java.lang.Integer.parseInt
 
 class ReplaceButtons {
 
@@ -36,17 +35,23 @@ class ReplaceButtons {
         val span3 = ImageSpan(icon3, ImageSpan.ALIGN_BASELINE)
 
         var myIndex = 1
-          (myIndex<textSpan.length)
-       myIndex = textSpan.indexOf("$",startIndex = myIndex  )
+        var qwe = 1
+        while (qwe < textSpan.length) {
+            myIndex = textSpan.indexOf("$", startIndex = myIndex)
+            qwe++
 
 
 
+           if (myIndex>1) textSpan.setSpan(span, myIndex, myIndex + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
 
-    textSpan.setSpan(span, myIndex, myIndex + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-      //  textSpan.setSpan(span1, myIndex1, myIndex1 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-        //textSpan.setSpan(span2, myIndex2, myIndex2 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-       // textSpan.setSpan(span3, myIndex3, myIndex3 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-        view.text = textSpan
+            //  textSpan.setSpan(span1, myIndex1, myIndex1 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+            //textSpan.setSpan(span2, myIndex2, myIndex2 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+            // textSpan.setSpan(span3, myIndex3, myIndex3 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+            myIndex ++
+            view.text = textSpan
+
+        }
+
     }
 
     fun replacesymbolsXBX(text: String, view: TextView, context: Context) {
