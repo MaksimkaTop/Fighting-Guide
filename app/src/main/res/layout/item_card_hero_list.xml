@@ -48,7 +48,7 @@
                 android:layout_below="@+id/person_photo"
                 android:layout_centerHorizontal="true"
                 android:paddingTop="8dp"
-                android:text="Even after he’s been exposed to the world as Batman, Bruce Wayne keeps his vow to avenge his parents’ death by fighting for justice. He refuses to execute his enemies, believing that once he crosses that line, he’s no better than the cowards he battles." />
+                android:text="" />
 
             <Button
                 android:id="@+id/button"
