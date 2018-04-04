@@ -3,6 +3,7 @@ package com.example.hp.fightingguide.helpers
 import android.content.Context
 import android.text.Spannable
 import android.text.SpannableString
+import android.text.SpannableStringBuilder
 import android.text.style.ImageSpan
 import android.widget.TextView
 import com.example.hp.fightingguide.R
@@ -11,13 +12,7 @@ class ReplaceButtons {
 
     fun replacesymbolsPS(text: String, view: TextView, context: Context) {
 
-        val textSpan = SpannableString(text)
-
-//       var myIndex = 1
-//               myIndex = textSpan.indexOf("$",startIndex = myIndex  )
-        val myIndex1 = textSpan.indexOf("#")
-        val myIndex2 = textSpan.indexOf("@")
-        val myIndex3 = textSpan.indexOf("%")
+        val ssb = SpannableStringBuilder(text)
 
         val icon = context.resources.getDrawable(R.drawable.h)
         val icon1 = context.resources.getDrawable(R.drawable.h)
@@ -29,38 +24,39 @@ class ReplaceButtons {
         icon2.setBounds(0, 0, icon.intrinsicHeight, icon.intrinsicWidth)
         icon3.setBounds(0, 0, icon.intrinsicHeight, icon.intrinsicWidth)
 
-        val span = ImageSpan(icon, ImageSpan.ALIGN_BASELINE)
-        val span1 = ImageSpan(icon1, ImageSpan.ALIGN_BASELINE)
-        val span2 = ImageSpan(icon2, ImageSpan.ALIGN_BASELINE)
-        val span3 = ImageSpan(icon3, ImageSpan.ALIGN_BASELINE)
+        var myIndex = 0
+        var myIndex1 = 0
+        var myIndex2 = 0
+        var myIndex3 = 0
+        var qwe = 0
+        while (qwe <= ssb.length) {
+            myIndex = ssb.indexOf("$", startIndex = myIndex)
+            myIndex1 = ssb.indexOf("%", startIndex = myIndex1)
+            myIndex2 = ssb.indexOf("@", startIndex = myIndex2)
+            myIndex3 = ssb.indexOf("#", startIndex = myIndex3)
 
-        var myIndex = 1
-        var qwe = 1
-        while (qwe < textSpan.length) {
-            myIndex = textSpan.indexOf("$", startIndex = myIndex)
+            val span = ImageSpan(icon, ImageSpan.ALIGN_BASELINE)
+            val span1 = ImageSpan(icon1, ImageSpan.ALIGN_BASELINE)
+            val span2 = ImageSpan(icon2, ImageSpan.ALIGN_BASELINE)
+            val span3 = ImageSpan(icon3, ImageSpan.ALIGN_BASELINE)
+
+            if (myIndex >= 0 ) ssb.setSpan(span, myIndex, myIndex + 1, 0)
+            if (myIndex1 >= 0 ) ssb.setSpan(span1, myIndex1, myIndex1 + 1, 0)
+            if (myIndex2 >= 0 ) ssb.setSpan(span2, myIndex2, myIndex2 + 1, 0)
+            if (myIndex3 >= 0 ) ssb.setSpan(span3, myIndex3, myIndex3 + 1, 0)
+
+            view.text = ssb
             qwe++
-
-
-
-           if (myIndex>1) textSpan.setSpan(span, myIndex, myIndex + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-
-            //  textSpan.setSpan(span1, myIndex1, myIndex1 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-            //textSpan.setSpan(span2, myIndex2, myIndex2 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-            // textSpan.setSpan(span3, myIndex3, myIndex3 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-            myIndex ++
-            view.text = textSpan
-
+            myIndex++
+            myIndex1++
+            myIndex2++
+            myIndex3++
         }
-
     }
 
     fun replacesymbolsXBX(text: String, view: TextView, context: Context) {
 
-        val textSpan = SpannableString(text)
-        val myIndex = textSpan.indexOf("@")
-        val myIndex1 = textSpan.indexOf("#")
-        val myIndex2 = textSpan.indexOf("$")
-        val myIndex3 = textSpan.indexOf("%")
+        val ssb = SpannableStringBuilder(text)
 
         val icon = context.resources.getDrawable(R.drawable.h)
         val icon1 = context.resources.getDrawable(R.drawable.h)
@@ -72,15 +68,33 @@ class ReplaceButtons {
         icon2.setBounds(0, 0, icon.intrinsicHeight, icon.intrinsicWidth)
         icon3.setBounds(0, 0, icon.intrinsicHeight, icon.intrinsicWidth)
 
-        val span = ImageSpan(icon, ImageSpan.ALIGN_BASELINE)
-        val span1 = ImageSpan(icon1, ImageSpan.ALIGN_BASELINE)
-        val span2 = ImageSpan(icon2, ImageSpan.ALIGN_BASELINE)
-        val span3 = ImageSpan(icon3, ImageSpan.ALIGN_BASELINE)
+        var myIndex = 0
+        var myIndex1 = 0
+        var myIndex2 = 0
+        var myIndex3 = 0
+        var qwe = 0
+        while (qwe <= ssb.length) {
+            myIndex = ssb.indexOf("$", startIndex = myIndex)
+            myIndex1 = ssb.indexOf("%", startIndex = myIndex1)
+            myIndex2 = ssb.indexOf("@", startIndex = myIndex2)
+            myIndex3 = ssb.indexOf("#", startIndex = myIndex3)
 
-        if (myIndex > 0) textSpan.setSpan(span, myIndex, myIndex + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-        if (myIndex1 > 0) textSpan.setSpan(span1, myIndex1, myIndex1 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-        if (myIndex2 > 0) textSpan.setSpan(span2, myIndex2, myIndex2 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-        if (myIndex3 > 0) textSpan.setSpan(span3, myIndex3, myIndex3 + 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-        view.text = textSpan
+            val span = ImageSpan(icon, ImageSpan.ALIGN_BASELINE)
+            val span1 = ImageSpan(icon1, ImageSpan.ALIGN_BASELINE)
+            val span2 = ImageSpan(icon2, ImageSpan.ALIGN_BASELINE)
+            val span3 = ImageSpan(icon3, ImageSpan.ALIGN_BASELINE)
+
+            if (myIndex >= 0 ) ssb.setSpan(span, myIndex, myIndex + 1, 0)
+            if (myIndex1 >= 0 ) ssb.setSpan(span1, myIndex1, myIndex1 + 1, 0)
+            if (myIndex2 >= 0 ) ssb.setSpan(span2, myIndex2, myIndex2 + 1, 0)
+            if (myIndex3 >= 0 ) ssb.setSpan(span3, myIndex3, myIndex3 + 1, 0)
+
+            view.text = ssb
+            qwe++
+            myIndex++
+            myIndex1++
+            myIndex2++
+            myIndex3++
+        }
     }
 }

@@ -21,7 +21,7 @@ class InjusticeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.item_card_hero_list)
         Log.wtf("qwe", "what?!")
-        val sdf = "qwe qwe $ qwe $ @ qwe "
+        val sdf = "$ qwe qwe $ qwe $ @ qwe @ $ $ % % % # # "
         ReplaceButtons().replacesymbolsPS(sdf,textView4,this)
 // EEEEE change symbol!
 //  val text1 = SpannableString(textView4.text)
