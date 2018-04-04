@@ -1,17 +1,10 @@
 package com.example.hp.fightingguide
 
-import android.database.Cursor
-import android.database.SQLException
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ImageSpan
 import android.util.Log
 import com.example.hp.fightingguide.helpers.ReplaceButtons
 import kotlinx.android.synthetic.main.item_card_hero_list.*
-import java.io.IOException
 
 
 class InjusticeActivity : AppCompatActivity() {
@@ -22,7 +15,7 @@ class InjusticeActivity : AppCompatActivity() {
         setContentView(R.layout.item_card_hero_list)
         Log.wtf("qwe", "what?!")
         val sdf = "$ qwe qwe $ qwe $ @ qwe @ $ $ % % % # # "
-        ReplaceButtons().replacesymbolsPS(sdf,textView4,this)
+        ReplaceButtons().replaceSymbolsPS(sdf,textView4,this)
 // EEEEE change symbol!
 //  val text1 = SpannableString(textView4.text)
 //// textView4.text = text1
