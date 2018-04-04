@@ -50,15 +50,6 @@
                 android:paddingTop="8dp"
                 android:text="" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/person_photo"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="97dp"
-                android:text="Button" />
-
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>
