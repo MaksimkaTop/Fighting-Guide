@@ -31,6 +31,7 @@ class InjusticeActivity : AppCompatActivity(), SelectCharacters {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.item_card_hero_list)
+        AppDatabase.getAppDatabase(this)
        // val sdf = "$ qwe qwe $ qwe $ @ qwe @ $ $ % % % # # "
         // ReplaceButtons().replaceSymbolsPS(sdf,textView4,this)
 //        val mDb: SQLiteDatabase
