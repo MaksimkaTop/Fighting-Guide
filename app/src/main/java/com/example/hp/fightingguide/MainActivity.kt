@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         glideGifAdd()
         btn_main_injustice.setOnClickListener {
-            val intent = Intent(this, InjusticeActivity::class.java)
+            val intent = Intent(this, ChooseController::class.java)
             startActivity(intent)
         }
     }
