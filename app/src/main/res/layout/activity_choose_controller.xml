@@ -39,7 +39,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose your side"
+        android:text="@string/choose_your_side"
         app:layout_constraintBottom_toTopOf="@+id/ib_select_control_xbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
