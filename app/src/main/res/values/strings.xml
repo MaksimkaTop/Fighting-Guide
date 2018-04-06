@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Fighting Guide</string>
     <string name="choose_your_side">Choose your side</string>
+    <string name="control_type">controlType</string>
+    <string name="xbox">xbox</string>
+    <string name="ps">ps</string>
 </resources>

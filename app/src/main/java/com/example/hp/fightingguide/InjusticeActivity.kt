@@ -14,24 +14,13 @@ import java.io.IOException
 
 
 class InjusticeActivity : AppCompatActivity(), SelectCharacters {
-    override fun showError(error: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
-    override fun initRecycler() {
-        rv_injustice.layoutManager = LinearLayoutManager(this)
-        rv_injustice.adapter = StoriesRecyclerAdapter()
-    }
-
-    override fun showProgressBar(flag: Boolean) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
+    var controlType: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_injustice)
-       val controlType =  intent.getStringExtra("control")
+        controlType =  intent.getStringExtra(getString(R.string.control_type))
         Log.wtf("qwe", controlType)
 
         // initRecycler()
@@ -63,5 +52,17 @@ class InjusticeActivity : AppCompatActivity(), SelectCharacters {
 //        cursor.close()
 
 
+    }
+    override fun showError(error: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun initRecycler() {
+        rv_injustice.layoutManager = LinearLayoutManager(this)
+        rv_injustice.adapter = StoriesRecyclerAdapter()
+    }
+
+    override fun showProgressBar(flag: Boolean) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

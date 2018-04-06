@@ -16,12 +16,12 @@ class ChooseController : AppCompatActivity() {
     fun choosed() {
         ib_select_control_xbox.setOnClickListener {
             val intent = Intent(this, InjusticeActivity::class.java)
-            intent.putExtra("control", "xbox")
+            intent.putExtra(getString(R.string.control_type), getString(R.string.xbox))
             startActivity(intent)
         }
         ib_select_control_ps.setOnClickListener {
             val intent = Intent(this, InjusticeActivity::class.java)
-            intent.putExtra("control", "ps")
+            intent.putExtra(getString(R.string.control_type), getString(R.string.ps))
             startActivity(intent)
 
         }
