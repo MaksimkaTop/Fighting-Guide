@@ -1,20 +1,27 @@
 package com.example.hp.fightingguide.presenter
 
+import android.content.Context
 import com.arellomobile.mvp.MvpPresenter
+import com.example.hp.fightingguide.DataRepository
 import com.example.hp.fightingguide.view.SelectCharacters
+import com.livinglifetechway.k4kotlin.logD
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.Observable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 
 class StoriesPresenter : MvpPresenter<SelectCharacters>() {
 
-    fun getStoriesData(){
-//    viewState.showProgressBar(true)
-//    AppDatabase.getAppDatabase().storiesDao().getAllStory()
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribeOn(Schedulers.io())
-//            .subscribe({
-//                if (it != null) {
-//                    viewState.initRecycler(it)
-//                }
-//                viewState.showProgressBar(false)
-//            }, {})
+    fun getStoriesData(context: Context) {
+        viewState.showProgressBar(true)
+        DataRepository().getStoriesData(context)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({
+                   // it.first()?.logD("tadaaaaa")
+                    viewState.initRecycler()
+                    viewState.showProgressBar(false)
+                }, {})
     }
 }
