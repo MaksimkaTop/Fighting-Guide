@@ -1,6 +1,5 @@
 package com.example.hp.fightingguide;
 
-import android.arch.persistence.room.Database;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;

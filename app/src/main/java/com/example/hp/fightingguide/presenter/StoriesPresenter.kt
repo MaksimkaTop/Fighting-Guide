@@ -1,14 +1,7 @@
 package com.example.hp.fightingguide.presenter
 
-import android.app.Application
-import android.content.Context
 import com.arellomobile.mvp.MvpPresenter
-import com.example.hp.fightingguide.AppDatabase
-import com.example.hp.fightingguide.data.Stories
 import com.example.hp.fightingguide.view.SelectCharacters
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import kotlin.coroutines.experimental.coroutineContext
 
 class StoriesPresenter : MvpPresenter<SelectCharacters>() {
 

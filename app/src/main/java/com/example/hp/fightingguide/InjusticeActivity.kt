@@ -24,32 +24,29 @@ class InjusticeActivity : AppCompatActivity(), SelectCharacters {
         Log.wtf("qwe", controlType)
 
         // initRecycler()
-       // val test = AppDatabase.get
-       // Log.wtf("qwe", test.toString())
-       // val sdf = "$ qwe qwe $ qwe $ @ qwe @ $ $ % % % # # "
-        // ReplaceButtons().replaceSymbolsPS(sdf,textView4,this)
-//        val mDb: SQLiteDatabase
-//        val mDBHelper = DatabaseHelper(this)
-//        try {
-//            mDBHelper.updateDataBase()
-//        } catch (mIOException: IOException) {
-//            throw Error("UnableToUpdateDatabase")
-//        }
-//        try {
-//            mDb = mDBHelper.writableDatabase
-//        } catch (mSQLException: SQLException) {
-//            throw mSQLException
-//        }
-//        var product = ""
-//        val cursor: Cursor = mDb.rawQuery("SELECT  icon  FROM Injustice2 ", null)
-//        cursor.moveToFirst()
-////          while (!cursor.isAfterLast) {
-//        product += cursor.getString(0) + " | "
-//        cursor.moveToNext()
-//
-//        Log.wtf("qwe", product)
-////          }
-//        cursor.close()
+
+        val mDb: SQLiteDatabase
+        val mDBHelper = DatabaseHelper(this)
+        try {
+            mDBHelper.updateDataBase()
+        } catch (mIOException: IOException) {
+            throw Error("UnableToUpdateDatabase")
+        }
+        try {
+            mDb = mDBHelper.writableDatabase
+        } catch (mSQLException: SQLException) {
+            throw mSQLException
+        }
+        var product = ""
+        val cursor: Cursor = mDb.rawQuery("SELECT  icon  FROM Injustice2 ", null)
+        cursor.moveToFirst()
+//          while (!cursor.isAfterLast) {
+        product += cursor.getString(0) + " | "
+        cursor.moveToNext()
+
+        Log.wtf("qwe", product)
+//          }
+        cursor.close()
 
 
     }
