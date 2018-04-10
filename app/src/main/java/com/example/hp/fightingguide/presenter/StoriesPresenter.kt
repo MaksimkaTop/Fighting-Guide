@@ -12,14 +12,14 @@ import io.reactivex.schedulers.Schedulers;
 class StoriesPresenter : MvpPresenter<SelectCharacters>() {
 
     fun getStoriesData(context: Context) {
-      //  viewState.showProgressBar(true)
+        viewState.showProgressBar(true)
         DataRepository().getStoriesData(context)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
                     it.first()?.logWtf("tadaaaaa")
                     viewState.withData(it)
-                   // viewState.showProgressBar(false)
+                    viewState.showProgressBar(false)
                 }, {})
     }
 }

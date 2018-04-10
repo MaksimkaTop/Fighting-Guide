@@ -2,6 +2,7 @@ package com.example.hp.fightingguide
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.hp.fightingguide.data.Stories
@@ -23,9 +24,7 @@ class InjusticeActivity : MvpAppCompatActivity(), SelectCharacters {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_injustice)
         controlType = intent.getStringExtra(getString(R.string.control_type))
-        // Log.wtf("qwe", controlType)
 
-        //  initRecycler()
         mStoriesData.getStoriesData(this)
 
     }
@@ -40,7 +39,7 @@ class InjusticeActivity : MvpAppCompatActivity(), SelectCharacters {
     }
 
 
-//    override fun showProgressBar(flag: Boolean) {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//    }
+    override fun showProgressBar(flag: Boolean) {
+        pb_injustice.visibility = if (flag) View.VISIBLE else View.INVISIBLE
+    }
 }
