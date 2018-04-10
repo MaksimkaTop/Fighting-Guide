@@ -8,7 +8,7 @@ import android.util.Log
 import java.io.IOException
 
 class RequestToBD {
-    fun getData(context: Context, columnName: String) {
+    fun getDataName(context: Context, columnName: String, game: String) : String {
         val mDb: SQLiteDatabase
         val mDBHelper = DatabaseHelper(context)
         try {
@@ -22,15 +22,17 @@ class RequestToBD {
             throw mSQLException
         }
         var product = ""
-        val cursor: Cursor = mDb.rawQuery("SELECT  @columnName  FROM Injustice2 ", null)
+        val cursor: Cursor = mDb.rawQuery("SELECT  $columnName  FROM $game ", null)
         cursor.moveToFirst()
 //          while (!cursor.isAfterLast) {
-        product += cursor.getString(0) + " | "
+        product += cursor.getString(0) //+ " | "
         cursor.moveToNext()
 
-        Log.wtf("qwe", product)
+      //  Log.wtf("prod", product)
 //          }
         cursor.close()
+        return  product
     }
+
 
 }

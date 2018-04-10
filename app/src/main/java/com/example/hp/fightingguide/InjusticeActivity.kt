@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import com.arellomobile.mvp.MvpAppCompatActivity
+import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.hp.fightingguide.presenter.StoriesPresenter
 import com.example.hp.fightingguide.stories.StoriesRecyclerAdapter
 import com.example.hp.fightingguide.view.SelectCharacters
@@ -18,14 +19,15 @@ import java.io.IOException
 class InjusticeActivity : MvpAppCompatActivity(), SelectCharacters {
 
     var controlType: String = ""
+    @InjectPresenter
     lateinit var mStoriesData : StoriesPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_injustice)
         controlType =  intent.getStringExtra(getString(R.string.control_type))
-        Log.wtf("qwe", controlType)
+       // Log.wtf("qwe", controlType)
 
-         initRecycler()
+       //  initRecycler()
         mStoriesData.getStoriesData(this)
 
 
@@ -54,16 +56,16 @@ class InjusticeActivity : MvpAppCompatActivity(), SelectCharacters {
 
 
     }
-    override fun showError(error: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+//    override fun showError(error: String) {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//    }
 
     override fun initRecycler() {
         rv_injustice.layoutManager = LinearLayoutManager(this)
         rv_injustice.adapter = StoriesRecyclerAdapter()
     }
 
-    override fun showProgressBar(flag: Boolean) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+//    override fun showProgressBar(flag: Boolean) {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//    }
 }
