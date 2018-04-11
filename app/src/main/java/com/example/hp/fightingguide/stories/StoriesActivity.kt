@@ -1,18 +1,19 @@
-package com.example.hp.fightingguide
+package com.example.hp.fightingguide.stories
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.data.StoriesData
 import com.example.hp.fightingguide.presenter.StoriesPresenter
-import com.example.hp.fightingguide.stories.StoriesRecyclerAdapter
 import com.example.hp.fightingguide.view.StoriesView
 import kotlinx.android.synthetic.main.activity_stories_list.*
 
 
-class InjusticeActivity : MvpAppCompatActivity(), StoriesView {
+class StoriesActivity : MvpAppCompatActivity(), StoriesView {
     private var controlType: String = ""
     @InjectPresenter
     lateinit var mStoriesData: StoriesPresenter
@@ -24,8 +25,9 @@ class InjusticeActivity : MvpAppCompatActivity(), StoriesView {
         mStoriesData.getStoriesData(this)
     }
         override fun showError(error: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+            Snackbar.make(stories_activity, error, Snackbar.LENGTH_LONG).show()
+        }
+
     override fun getData(data: ArrayList<StoriesData?>) {
         rv_injustice.adapter = StoriesRecyclerAdapter(data)
         rv_injustice.layoutManager = LinearLayoutManager(this)
