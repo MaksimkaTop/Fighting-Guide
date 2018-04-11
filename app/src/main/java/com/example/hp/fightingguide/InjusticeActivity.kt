@@ -5,14 +5,14 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
-import com.example.hp.fightingguide.data.Stories
+import com.example.hp.fightingguide.data.StoriesData
 import com.example.hp.fightingguide.presenter.StoriesPresenter
 import com.example.hp.fightingguide.stories.StoriesRecyclerAdapter
-import com.example.hp.fightingguide.view.SelectCharacters
+import com.example.hp.fightingguide.view.StoriesView
 import kotlinx.android.synthetic.main.activity_injustice.*
 
 
-class InjusticeActivity : MvpAppCompatActivity(), SelectCharacters {
+class InjusticeActivity : MvpAppCompatActivity(), StoriesView {
     private var controlType: String = ""
     @InjectPresenter
     lateinit var mStoriesData: StoriesPresenter
@@ -26,7 +26,7 @@ class InjusticeActivity : MvpAppCompatActivity(), SelectCharacters {
         override fun showError(error: String) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-    override fun getData(data: ArrayList<Stories?>) {
+    override fun getData(data: ArrayList<StoriesData?>) {
         rv_injustice.adapter = StoriesRecyclerAdapter(data)
         rv_injustice.layoutManager = LinearLayoutManager(this)
     }

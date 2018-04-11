@@ -1,11 +1,11 @@
 package com.example.hp.fightingguide.view
 
 import com.arellomobile.mvp.MvpView
-import com.example.hp.fightingguide.data.Stories
+import com.example.hp.fightingguide.data.StoriesData
 
-interface SelectCharacters: MvpView {
+interface StoriesView: MvpView {
     fun showError(error: String)
-    fun getData(data: ArrayList<Stories?>)
+    fun getData(data: ArrayList<StoriesData?>)
     fun showProgressBar(flag: Boolean)
 
 

@@ -5,12 +5,12 @@ import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.example.hp.fightingguide.DataRepository
 import com.example.hp.fightingguide.R
-import com.example.hp.fightingguide.view.SelectCharacters
+import com.example.hp.fightingguide.view.StoriesView
 import com.livinglifetechway.k4kotlin.logWtf
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers;
 @InjectViewState
-class StoriesPresenter : MvpPresenter<SelectCharacters>() {
+class StoriesPresenter : MvpPresenter<StoriesView>() {
 
     fun getStoriesData(context: Context) {
         viewState.showProgressBar(true)

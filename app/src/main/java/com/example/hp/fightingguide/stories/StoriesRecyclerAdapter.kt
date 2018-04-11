@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.example.hp.fightingguide.R
-import com.example.hp.fightingguide.data.Stories
+import com.example.hp.fightingguide.data.StoriesData
 
-class StoriesRecyclerAdapter(val data: ArrayList<Stories?>) : RecyclerView.Adapter<StoriesHolder>() {
+class StoriesRecyclerAdapter(val data: ArrayList<StoriesData?>) : RecyclerView.Adapter<StoriesHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesHolder =
             StoriesHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_card_hero_list, parent, false))
 
