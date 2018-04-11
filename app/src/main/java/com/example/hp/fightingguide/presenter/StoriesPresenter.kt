@@ -4,6 +4,7 @@ import android.content.Context
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.example.hp.fightingguide.DataRepository
+import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.view.SelectCharacters
 import com.livinglifetechway.k4kotlin.logWtf
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -20,6 +21,8 @@ class StoriesPresenter : MvpPresenter<SelectCharacters>() {
                     it.first()?.logWtf("tadaaaaa")
                     viewState.getData(it)
                     viewState.showProgressBar(false)
-                }, {})
+                }, {
+                    viewState.showError(context.getString(R.string.wrong_message))
+                })
     }
 }

@@ -10,9 +10,9 @@ class DataRepository {
         return Single.create {
             val repo = RequestToBD()
             val stories = Stories(
-                    name = repo.getDataName(context, "name", "Injustice2").toString(),
-                    icon = repo.getDataName(context, "icon", "Injustice2").toString(),
-                    story = repo.getDataName(context, "story", "Injustice2").toString()
+                    name = repo.getDataFromBD(context, context.getString(R.string.name), context.getString(R.string.Injustice2)),
+                    icon = repo.getDataFromBD(context, context.getString(R.string.icon), context.getString(R.string.Injustice2)),
+                    story = repo.getDataFromBD(context, context.getString(R.string.story), context.getString(R.string.Injustice2))
             )
             it.onSuccess(arrayListOf(stories))
         }

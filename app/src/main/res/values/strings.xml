@@ -4,4 +4,9 @@
     <string name="control_type">controlType</string>
     <string name="xbox">xbox</string>
     <string name="ps">ps</string>
+    <string name="wrong_message">Sorry, something went wrong</string>
+    <string name="name">name</string>
+    <string name="icon">icon</string>
+    <string name="story">story</string>
+    <string name="Injustice2">Injustice2</string>
 </resources>

@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun glideGifAdd() {
+    private fun glideGifAdd() {
         Glide
                 .with(this)
                 .load(R.drawable.fire)

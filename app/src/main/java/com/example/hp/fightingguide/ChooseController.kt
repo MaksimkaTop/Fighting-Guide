@@ -10,10 +10,10 @@ class ChooseController : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_controller)
-        choosed()
+        chooseConsole()
     }
 
-    fun choosed() {
+    private fun chooseConsole() {
         ib_select_control_xbox.setOnClickListener {
             val intent = Intent(this, InjusticeActivity::class.java)
             intent.putExtra(getString(R.string.control_type), getString(R.string.xbox))

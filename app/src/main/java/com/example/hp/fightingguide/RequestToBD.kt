@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import java.io.IOException
 
 class RequestToBD {
-    fun getDataName(context: Context, columnName: String, game: String): String {
+    fun getDataFromBD(context: Context, columnName: String, game: String): String {
         val mDb: SQLiteDatabase
         val mDBHelper = DatabaseHelper(context)
         try {

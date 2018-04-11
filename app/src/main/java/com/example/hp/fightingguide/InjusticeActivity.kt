@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_injustice.*
 
 
 class InjusticeActivity : MvpAppCompatActivity(), SelectCharacters {
-    var controlType: String = ""
+    private var controlType: String = ""
     @InjectPresenter
     lateinit var mStoriesData: StoriesPresenter
 
@@ -23,9 +23,9 @@ class InjusticeActivity : MvpAppCompatActivity(), SelectCharacters {
         controlType = intent.getStringExtra(getString(R.string.control_type))
         mStoriesData.getStoriesData(this)
     }
-    //    override fun showError(error: String) {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//    }
+        override fun showError(error: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
     override fun getData(data: ArrayList<Stories?>) {
         rv_injustice.adapter = StoriesRecyclerAdapter(data)
         rv_injustice.layoutManager = LinearLayoutManager(this)
