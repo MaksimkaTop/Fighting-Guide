@@ -26,7 +26,5 @@ class ChooseController : AppCompatActivity() {
             startActivity(intent)
 
         }
-
-
     }
 }

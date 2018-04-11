@@ -22,9 +22,7 @@ class MainActivity : AppCompatActivity() {
         Glide
                 .with(this)
                 .load(R.drawable.fire)
-
                 .into(imageView2)
-
     }
 }
 

@@ -8,7 +8,7 @@ import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.view.StoriesView
 import com.livinglifetechway.k4kotlin.logWtf
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.schedulers.Schedulers
 @InjectViewState
 class StoriesPresenter : MvpPresenter<StoriesView>() {
 
