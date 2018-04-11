@@ -10,7 +10,7 @@ import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.data.StoriesData
 import com.example.hp.fightingguide.presenter.StoriesPresenter
 import com.example.hp.fightingguide.view.StoriesView
-import kotlinx.android.synthetic.main.activity_stories_list.*
+import kotlinx.android.synthetic.main.activity_stories.*
 
 
 class StoriesActivity : MvpAppCompatActivity(), StoriesView {
@@ -20,7 +20,7 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_stories_list)
+        setContentView(R.layout.activity_stories)
         controlType = intent.getStringExtra(getString(R.string.control_type))
         mStoriesData.getStoriesData(this)
     }
@@ -29,10 +29,10 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
         }
 
     override fun getData(data: ArrayList<StoriesData?>) {
-        rv_injustice.adapter = StoriesRecyclerAdapter(data)
-        rv_injustice.layoutManager = LinearLayoutManager(this)
+        rv_stories.adapter = StoriesRecyclerAdapter(data)
+        rv_stories.layoutManager = LinearLayoutManager(this)
     }
     override fun showProgressBar(flag: Boolean) {
-        pb_injustice.visibility = if (flag) View.VISIBLE else View.INVISIBLE
+        pb_stories.visibility = if (flag) View.VISIBLE else View.INVISIBLE
     }
 }

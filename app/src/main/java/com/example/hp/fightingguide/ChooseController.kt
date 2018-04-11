@@ -4,13 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.hp.fightingguide.stories.StoriesActivity
-import kotlinx.android.synthetic.main.activity_choose_controller.*
+import kotlinx.android.synthetic.main.activity_choose_console.*
 
 class ChooseController : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_choose_controller)
+        setContentView(R.layout.activity_choose_console)
         chooseConsole()
     }
 

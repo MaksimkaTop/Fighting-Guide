@@ -19,31 +19,31 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/person_photo"
+                android:id="@+id/iv_stories_person_icon"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true" />
             <TextView
-                android:id="@+id/person_name"
+                android:id="@+id/tv_stories_person_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/person_photo"
-                android:layout_toRightOf="@+id/person_photo"
+                android:layout_toEndOf="@+id/iv_stories_person_icon"
+                android:layout_toRightOf="@+id/iv_stories_person_icon"
                 android:paddingLeft="16dp"
                 android:paddingStart="16dp"
                 android:paddingRight="16dp"
                 android:textSize="23sp" />
 
             <TextView
-                android:id="@+id/tv_story"
+                android:id="@+id/tv_stories_story"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/person_photo"
+                android:layout_below="@+id/iv_stories_person_icon"
                 android:layout_centerHorizontal="true"
                 android:paddingTop="8dp"
                 android:text="" />
