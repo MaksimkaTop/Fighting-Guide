@@ -11,7 +11,7 @@ import com.example.hp.fightingguide.data.StoriesData
 
 class StoriesRecyclerAdapter(val data: ArrayList<StoriesData?>) : RecyclerView.Adapter<StoriesHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesHolder =
-            StoriesHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_card_hero_list, parent, false))
+            StoriesHolder(LayoutInflater.from(parent.context).inflate(R.layout.stories_card_item, parent, false))
 
 
     override fun getItemCount(): Int = data.size

@@ -9,7 +9,7 @@ import com.example.hp.fightingguide.data.StoriesData
 import com.example.hp.fightingguide.presenter.StoriesPresenter
 import com.example.hp.fightingguide.stories.StoriesRecyclerAdapter
 import com.example.hp.fightingguide.view.StoriesView
-import kotlinx.android.synthetic.main.activity_injustice.*
+import kotlinx.android.synthetic.main.activity_stories_list.*
 
 
 class InjusticeActivity : MvpAppCompatActivity(), StoriesView {
@@ -19,7 +19,7 @@ class InjusticeActivity : MvpAppCompatActivity(), StoriesView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_injustice)
+        setContentView(R.layout.activity_stories_list)
         controlType = intent.getStringExtra(getString(R.string.control_type))
         mStoriesData.getStoriesData(this)
     }

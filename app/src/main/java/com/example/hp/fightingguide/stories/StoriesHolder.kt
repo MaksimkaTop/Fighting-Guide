@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import kotlinx.android.synthetic.main.item_card_hero_list.view.*
+import kotlinx.android.synthetic.main.stories_card_item.view.*
 
 class StoriesHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val icon : ImageView = itemView.person_photo
