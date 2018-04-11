@@ -4,11 +4,10 @@ import android.content.Context
 import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
-import android.util.Log
 import java.io.IOException
 
 class RequestToBD {
-    fun getDataName(context: Context, columnName: String, game: String) : String {
+    fun getDataName(context: Context, columnName: String, game: String): String {
         val mDb: SQLiteDatabase
         val mDBHelper = DatabaseHelper(context)
         try {
@@ -27,11 +26,9 @@ class RequestToBD {
 //          while (!cursor.isAfterLast) {
         product += cursor.getString(0) //+ " | "
         cursor.moveToNext()
-
-      //  Log.wtf("prod", product)
 //          }
         cursor.close()
-        return  product
+        return product
     }
 
 

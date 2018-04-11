@@ -13,7 +13,6 @@ class DataRepository {
                     name = repo.getDataName(context, "name", "Injustice2").toString(),
                     icon = repo.getDataName(context, "icon", "Injustice2").toString(),
                     story = repo.getDataName(context, "story", "Injustice2").toString()
-
             )
             it.onSuccess(arrayListOf(stories))
         }

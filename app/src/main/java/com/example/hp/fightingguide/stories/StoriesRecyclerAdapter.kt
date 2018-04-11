@@ -10,7 +10,6 @@ import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.data.Stories
 
 class StoriesRecyclerAdapter(val data: ArrayList<Stories?>) : RecyclerView.Adapter<StoriesHolder>() {
-    //val data = arrayListOf<Stories>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesHolder =
             StoriesHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_card_hero_list, parent, false))
 

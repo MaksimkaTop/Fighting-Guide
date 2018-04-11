@@ -13,32 +13,23 @@ import kotlinx.android.synthetic.main.activity_injustice.*
 
 
 class InjusticeActivity : MvpAppCompatActivity(), SelectCharacters {
-
-
     var controlType: String = ""
     @InjectPresenter
     lateinit var mStoriesData: StoriesPresenter
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_injustice)
         controlType = intent.getStringExtra(getString(R.string.control_type))
-
         mStoriesData.getStoriesData(this)
-
     }
-
     //    override fun showError(error: String) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
 //    }
-    override fun withData(data: ArrayList<Stories?>) {
+    override fun getData(data: ArrayList<Stories?>) {
         rv_injustice.adapter = StoriesRecyclerAdapter(data)
         rv_injustice.layoutManager = LinearLayoutManager(this)
-
     }
-
-
     override fun showProgressBar(flag: Boolean) {
         pb_injustice.visibility = if (flag) View.VISIBLE else View.INVISIBLE
     }

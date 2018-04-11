@@ -18,7 +18,7 @@ class StoriesPresenter : MvpPresenter<SelectCharacters>() {
                 .subscribeOn(Schedulers.io())
                 .subscribe({
                     it.first()?.logWtf("tadaaaaa")
-                    viewState.withData(it)
+                    viewState.getData(it)
                     viewState.showProgressBar(false)
                 }, {})
     }
