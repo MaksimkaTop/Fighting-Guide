@@ -5,6 +5,7 @@
     android:id="@+id/stories_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
     tools:context="com.example.hp.fightingguide.stories.StoriesActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -37,6 +38,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:fitsSystemWindows="false"
                 android:minHeight="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:layout_scrollFlags="scroll|enterAlways"
