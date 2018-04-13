@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+android:background="@color/md_red_100"
     android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
@@ -10,6 +11,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="6dp"
         app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/md_black_1000"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
         app:contentPadding="8dp">
@@ -32,6 +34,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
+                android:textColor="@color/md_white_1000"
                 android:layout_toEndOf="@+id/iv_stories_person_icon"
                 android:layout_toRightOf="@+id/iv_stories_person_icon"
                 android:paddingLeft="16dp"
@@ -45,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_stories_person_icon"
                 android:layout_centerHorizontal="true"
+                android:textColor="@color/md_white_1000"
                 android:paddingTop="8dp"
                 android:text="" />
 

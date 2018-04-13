@@ -5,6 +5,7 @@ import android.util.Base64
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.data.StoriesData
 
@@ -21,7 +22,9 @@ class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>) : RecyclerView.Ad
         Glide
                 .with(holder.icon.context)
                 .load(imageByteArray)
+                .apply(RequestOptions.circleCropTransform())
                 .into(holder.icon)
     }
+
 
 }

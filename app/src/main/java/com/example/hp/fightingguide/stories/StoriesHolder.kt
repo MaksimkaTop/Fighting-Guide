@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_stories.view.*
 import kotlinx.android.synthetic.main.stories_card_item.view.*
 
 class StoriesHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

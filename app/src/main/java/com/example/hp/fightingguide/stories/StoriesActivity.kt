@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.bumptech.glide.Glide
 import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.data.StoriesData
 import com.example.hp.fightingguide.presenter.StoriesPresenter
@@ -23,6 +24,8 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
         setContentView(R.layout.activity_stories)
         controlType = intent.getStringExtra(getString(R.string.control_type))
         mStoriesData.getStoriesData(this)
+        collapsing_toolbar.title = "Injustice 2"
+        appbarImg()
     }
 
     override fun showError(error: String) {
@@ -32,9 +35,17 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
     override fun getData(data: ArrayList<StoriesData>) {
         rv_stories.adapter = StoriesRecyclerAdapter(data)
         rv_stories.layoutManager = LinearLayoutManager(this)
+        rv_stories.itemAnimator
     }
 
     override fun showProgressBar(flag: Boolean) {
         pb_stories.visibility = if (flag) View.VISIBLE else View.INVISIBLE
+    }
+
+    fun appbarImg() {
+        Glide
+                .with(iv_stories_appbar.context)
+                .load(R.drawable.injustice2_all_characters)
+                .into(iv_stories_appbar)
     }
 }
