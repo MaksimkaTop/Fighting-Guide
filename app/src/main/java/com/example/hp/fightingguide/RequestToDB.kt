@@ -4,10 +4,11 @@ import android.content.Context
 import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
+import com.example.hp.fightingguide.data.StoriesData
 import java.io.IOException
 
 class RequestToDB {
-    fun getDataFromBD(context: Context, columnName: String, game: String): String {
+    fun getDataFromBD(context: Context, game: String): ArrayList<StoriesData> {
         val mDb: SQLiteDatabase
         val mDBHelper = DatabaseHelper(context)
         try {
@@ -21,14 +22,16 @@ class RequestToDB {
             throw mSQLException
         }
         var product = ""
-        val cursor: Cursor = mDb.rawQuery("SELECT  $columnName  FROM $game ", null)
+        val listStories = arrayListOf<StoriesData>()
+        val cursor: Cursor = mDb.rawQuery("SELECT  name,story , icon   FROM $game ", null)
         cursor.moveToFirst()
-//          while (!cursor.isAfterLast) {
-        product += cursor.getString(0) //+ " | "
-        cursor.moveToNext()
-//          }
+        while (!cursor.isAfterLast) {
+            product += cursor.getString(0) //+ " | "
+            listStories.add(StoriesData(cursor.getString(0), cursor.getString(1), cursor.getString(2)))
+            cursor.moveToNext()
+        }
         cursor.close()
-        return product
+        return listStories
     }
 
 

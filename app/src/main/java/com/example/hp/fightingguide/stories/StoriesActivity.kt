@@ -24,14 +24,16 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
         controlType = intent.getStringExtra(getString(R.string.control_type))
         mStoriesData.getStoriesData(this)
     }
-        override fun showError(error: String) {
-            Snackbar.make(stories_activity, error, Snackbar.LENGTH_LONG).show()
-        }
 
-    override fun getData(data: ArrayList<StoriesData?>) {
+    override fun showError(error: String) {
+        Snackbar.make(stories_activity, error, Snackbar.LENGTH_LONG).show()
+    }
+
+    override fun getData(data: ArrayList<StoriesData>) {
         rv_stories.adapter = StoriesRecyclerAdapter(data)
         rv_stories.layoutManager = LinearLayoutManager(this)
     }
+
     override fun showProgressBar(flag: Boolean) {
         pb_stories.visibility = if (flag) View.VISIBLE else View.INVISIBLE
     }

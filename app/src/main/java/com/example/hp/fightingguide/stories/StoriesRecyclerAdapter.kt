@@ -8,16 +8,16 @@ import com.bumptech.glide.Glide
 import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.data.StoriesData
 
-class StoriesRecyclerAdapter(val data: ArrayList<StoriesData?>) : RecyclerView.Adapter<StoriesHolder>() {
+class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>) : RecyclerView.Adapter<StoriesHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesHolder =
             StoriesHolder(LayoutInflater.from(parent.context).inflate(R.layout.stories_card_item, parent, false))
 
     override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: StoriesHolder, position: Int) {
-        holder.name.text = data[position]?.name
-        holder.story.text = data[position]?.story
-        val imageByteArray = Base64.decode(data[position]?.icon, Base64.DEFAULT)
+        holder.name.text = data[position].name
+        holder.story.text = data[position].story
+        val imageByteArray = Base64.decode(data[position].icon, Base64.DEFAULT)
         Glide
                 .with(holder.icon.context)
                 .load(imageByteArray)
