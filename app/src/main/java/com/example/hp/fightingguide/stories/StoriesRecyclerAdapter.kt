@@ -1,15 +1,20 @@
 package com.example.hp.fightingguide.stories
 
+import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.util.Base64
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.hp.fightingguide.CombosActivity
 import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.data.StoriesData
 
-class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>) : RecyclerView.Adapter<StoriesHolder>() {
+
+class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>, context: Context ) : RecyclerView.Adapter<StoriesHolder>() {
+    private val mInflater: LayoutInflater = LayoutInflater.from(context)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesHolder =
             StoriesHolder(LayoutInflater.from(parent.context).inflate(R.layout.stories_card_item, parent, false))
 
@@ -24,6 +29,14 @@ class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>) : RecyclerView.Ad
                 .load(imageByteArray)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.icon)
+
+
+        holder.cardV.setOnClickListener {
+            val intent = Intent(mInflater.context, CombosActivity::class.java)
+            intent.putExtra("name", data[position].name)
+            intent.putExtra("icon", data[position].icon)
+            mInflater.context.startActivity(intent)
+        }
     }
 
 

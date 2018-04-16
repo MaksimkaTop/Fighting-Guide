@@ -4,136 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackgroundFirst"
+    android:background="#616161"
     tools:context="com.example.hp.fightingguide.stories.StoriesActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_tekken7"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.3"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ripple"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/iv_injustice2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vape_background" />
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:isScrollContainer="true"
-        tools:context="com.example.hp.fightingguide.MainActivity">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/btn_main_injustice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/btn_background"
-                android:clickable="true"
-                android:focusable="true"
-                android:padding="36dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/injustice_2_logo_le" />
-
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/btn_background"
-                android:padding="36dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/injustice_2_logo_le" />
-
-            <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/btn_background"
-                android:padding="36dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/injustice_2_logo_le" />
-
-            <ImageButton
-                android:id="@+id/imageButton7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/btn_background"
-                android:padding="36dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/injustice_2_logo_le" />
-
-            <ImageButton
-                android:id="@+id/imageButton8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/btn_background"
-                android:padding="36dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/injustice_2_logo_le" />
-
-            <ImageButton
-                android:id="@+id/imageButton9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/btn_background"
-                android:padding="36dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/injustice_2_logo_le" />
-
-            <ImageButton
-                android:id="@+id/imageButton10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/btn_background"
-                android:padding="36dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/injustice_2_logo_le" />
-
-            <ImageButton
-                android:id="@+id/imageButton11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:layout_marginBottom="8dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/btn_background"
-                android:padding="36dp"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/injustice_2_logo_le" />
-        </LinearLayout>
-    </ScrollView>
+        app:srcCompat="@drawable/logo_tekken7" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_injustice2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.1"
-        android:scaleType="fitXY"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ripple"
+        android:scaleType="fitCenter"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_mkx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tekken7"
+        app:srcCompat="@drawable/injustice_2_logo_le" />
+
+    <ImageView
+        android:id="@+id/iv_mkx"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ripple"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/iv_injustice2"
+        app:srcCompat="@drawable/mk_drakon" />
 </android.support.constraint.ConstraintLayout>

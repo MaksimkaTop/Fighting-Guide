@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_stories.*
 
 class StoriesActivity : MvpAppCompatActivity(), StoriesView {
     private var controlType: String = ""
+    private var gameName: String = ""
     @InjectPresenter
     lateinit var mStoriesData: StoriesPresenter
 
@@ -23,8 +24,9 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stories)
         controlType = intent.getStringExtra(getString(R.string.control_type))
+        gameName = intent.getStringExtra(getString(R.string.game))
         mStoriesData.getStoriesData(this)
-        collapsing_toolbar.title = "Injustice 2"
+        collapsing_toolbar.title = gameName
         appbarImg()
     }
 
@@ -33,7 +35,7 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
     }
 
     override fun getData(data: ArrayList<StoriesData>) {
-        rv_stories.adapter = StoriesRecyclerAdapter(data)
+        rv_stories.adapter = StoriesRecyclerAdapter(data, this)
         rv_stories.layoutManager = LinearLayoutManager(this)
         rv_stories.itemAnimator
     }

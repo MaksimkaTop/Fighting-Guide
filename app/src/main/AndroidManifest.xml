@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".stories.StoriesActivity" />
-        <activity android:name=".ChooseController"></activity>
+        <activity android:name=".ChooseController">
+
+        </activity>
+        <activity android:name=".CombosActivity" />
     </application>
 
 </manifest>

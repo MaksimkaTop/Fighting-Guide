@@ -11,18 +11,23 @@ class ChooseController : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_console)
-        chooseConsole()
+        val choosedGame = intent.getStringExtra(getString(R.string.game))
+        chooseConsole(choosedGame)
+
     }
 
-    private fun chooseConsole() {
+    private fun chooseConsole(gameName: String) {
         ib_select_control_xbox.setOnClickListener {
             val intent = Intent(this, StoriesActivity::class.java)
             intent.putExtra(getString(R.string.control_type), getString(R.string.xbox))
+            intent.putExtra(getString(R.string.game), gameName)
             startActivity(intent)
         }
         ib_select_control_ps.setOnClickListener {
             val intent = Intent(this, StoriesActivity::class.java)
             intent.putExtra(getString(R.string.control_type), getString(R.string.ps))
+            intent.putExtra(getString(R.string.game), gameName)
+
             startActivity(intent)
 
         }

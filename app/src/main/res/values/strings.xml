@@ -9,4 +9,7 @@
     <string name="icon">icon</string>
     <string name="story">story</string>
     <string name="Injustice2">Injustice2</string>
+    <string name="game">game</string>
+    <string name="mkx">Mortal Kombat X</string>
+    <string name="Tekken7">Tekken 7</string>
 </resources>
