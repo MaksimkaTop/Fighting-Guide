@@ -20,7 +20,7 @@
         <activity android:name=".ChooseController">
 
         </activity>
-        <activity android:name=".CombosActivity" />
+        <activity android:name=".combo.CombosActivity" />
     </application>
 
 </manifest>

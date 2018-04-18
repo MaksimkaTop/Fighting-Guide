@@ -1,13 +1,18 @@
 package com.example.hp.fightingguide.stories
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v7.widget.GridLayout
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.bumptech.glide.Glide
 import com.example.hp.fightingguide.R
+import com.example.hp.fightingguide.R.layout.activity_stories
 import com.example.hp.fightingguide.data.StoriesData
 import com.example.hp.fightingguide.presenter.StoriesPresenter
 import com.example.hp.fightingguide.view.StoriesView
@@ -35,8 +40,13 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
     }
 
     override fun getData(data: ArrayList<StoriesData>) {
+        val orintationPos = this.resources.configuration.orientation
+        if (orintationPos == Configuration.ORIENTATION_PORTRAIT) {
+            rv_stories.layoutManager = GridLayoutManager(this,1)
+        } else {
+            rv_stories.layoutManager = GridLayoutManager(this,2)
+        }
         rv_stories.adapter = StoriesRecyclerAdapter(data, this)
-        rv_stories.layoutManager = LinearLayoutManager(this)
         rv_stories.itemAnimator
     }
 

@@ -4,6 +4,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
+import android.util.Log
 import com.example.hp.fightingguide.data.CombosData
 import com.example.hp.fightingguide.data.StoriesData
 import java.io.IOException
@@ -24,11 +25,11 @@ class RequestToDB {
         }
         var product = ""
         val listStories = arrayListOf<StoriesData>()
-        val cursor: Cursor = mDb.rawQuery("SELECT  name,story , icon   FROM $game ", null)
+        val cursor: Cursor = mDb.rawQuery("SELECT  name,story , icon ,combo, special  FROM $game ", null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast) {
             product += cursor.getString(0) //+ " | "
-            listStories.add(StoriesData(cursor.getString(0), cursor.getString(1), cursor.getString(2)))
+            listStories.add(StoriesData(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)))
             cursor.moveToNext()
         }
         cursor.close()
@@ -50,13 +51,14 @@ class RequestToDB {
         }
         var product = ""
         val listStories = arrayListOf<CombosData>()
-        val cursor: Cursor = mDb.rawQuery("SELECT  name, icon, combo, special   FROM $game WHERE name = $nameHero", null)
+        val cursor: Cursor = mDb.rawQuery("SELECT  combo, special   FROM $game WHERE Name = $nameHero", null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast) {
             product += cursor.getString(0) //+ " | "
-            listStories.add(CombosData(cursor.getString(0), cursor.getString(1), cursor.getString(2)))
+            listStories.add(CombosData(cursor.getString(0), cursor.getString(1)))
             cursor.moveToNext()
         }
+        Log.wtf("qwe", listStories.toString())
         cursor.close()
         return listStories
     }

@@ -5,6 +5,7 @@
     android:id="@+id/stories_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#616161"
     android:fitsSystemWindows="false"
     tools:context="com.example.hp.fightingguide.stories.StoriesActivity">
 
@@ -31,8 +32,7 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                app:layout_collapseMode="parallax"
-                />
+                app:layout_collapseMode="parallax" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -40,16 +40,12 @@
                 android:layout_height="?attr/actionBarSize"
                 android:fitsSystemWindows="false"
                 android:minHeight="?attr/actionBarSize"
-           android:layout_marginTop="16dp"
                 app:layout_collapseMode="pin"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
-
     </android.support.design.widget.AppBarLayout>
-
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_stories"
         android:layout_width="match_parent"

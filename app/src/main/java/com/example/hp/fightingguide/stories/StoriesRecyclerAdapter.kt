@@ -8,12 +8,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.hp.fightingguide.CombosActivity
 import com.example.hp.fightingguide.R
+import com.example.hp.fightingguide.combo.CombosActivity
 import com.example.hp.fightingguide.data.StoriesData
 
 
-class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>, context: Context ) : RecyclerView.Adapter<StoriesHolder>() {
+class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>, context: Context) : RecyclerView.Adapter<StoriesHolder>() {
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesHolder =
             StoriesHolder(LayoutInflater.from(parent.context).inflate(R.layout.stories_card_item, parent, false))
@@ -33,9 +33,12 @@ class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>, context: Context 
 
         holder.cardV.setOnClickListener {
             val intent = Intent(mInflater.context, CombosActivity::class.java)
-            intent.putExtra("name", data[position].name)
-            intent.putExtra("icon", data[position].icon)
+            intent.putExtra(holder.icon.context.getString(R.string.name), data[position].name)
+            intent.putExtra(holder.icon.context.getString(R.string.icon), data[position].icon)
+            intent.putExtra("combo", data[position].combo)
+            intent.putExtra("special", data[position].special)
             mInflater.context.startActivity(intent)
+
         }
     }
 

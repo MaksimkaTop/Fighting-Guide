@@ -12,4 +12,7 @@
     <string name="game">game</string>
     <string name="mkx">Mortal Kombat X</string>
     <string name="Tekken7">Tekken 7</string>
+
+    <string name="transition_name_name">transition:NAME</string>
+    <string name="transition_name_icon">transition:ICON</string>
 </resources>

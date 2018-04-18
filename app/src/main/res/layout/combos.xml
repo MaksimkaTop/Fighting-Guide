@@ -1,87 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:popupTheme="@style/AppTheme" >
+        app:popupTheme="@style/AppTheme">
+
         <ImageView
-            android:padding="4dp"
             android:id="@+id/iv_combo_icon_hero"
-            android:src="@drawable/batman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:padding="4dp"
             android:scaleType="fitCenter"
-            />
+            android:src="@drawable/batman" />
+
         <TextView
             android:id="@+id/tv_combo_name_hero"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="Batman"
-            android:paddingStart="16dp"
-            android:paddingLeft="16dp"
-            android:textSize="20sp"/>
+            android:maxLines="1"
+            android:padding="2dp"
+            android:text="Batman Canary"
+            android:textAlignment="center"
+            android:textSize="20sp" />
     </android.support.v7.widget.Toolbar>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@id/toolbar">
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-    <TextView
-        android:id="@+id/textView2"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_combo_combo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Combo"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+            <TextView
+                android:id="@+id/tv_combo_usage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8sp"
+                android:padding="16dp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_combo_combo" />
+
+            <TextView
+                android:id="@+id/tv_combo_special"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Special"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_combo_usage" />
+
+            <TextView
+                android:id="@+id/tv_special_usage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8sp"
+                android:padding="16dp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_combo_special" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pb_combo"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Combo"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:lineSpacingExtra="8sp"
-        android:text="Blood and Rage – Right + Light Attack, Medium Attack, Heavy Attack \n
-    Blood Bath – Left + Medium Attack, Heavy Attack Blood Ritual – Right + Medium Attack, Medium Attack, Heavy Attack \n
-    Blood Tears – Light Attack, Light Attack \n
-    Empire of Tears – Right + Medium Attack, Medium Attack \n
-    Five Inversions – Light Attack, Light Attack, Medium Attack, Heavy Attack \n
-    Freshly Dead – Right + Light Attack, Heavy Attack \n
-    Heartless – Light Attack, Light Attack, Light Attack \n
-    Instrument of Vengeance – Medium Attack, Medium Attack \n
-    Return to Ysmault – Right + Medium Attack, Medium Attack, Light Attack + Heavy Attack Sector 666 – Right + Light Attack, Medium Attack \n
-    Simple Betrayal – Light Attack, Light Attack, Medium Attack \n Blood and Rage – Right + Light Attack, Medium Attack, Heavy Attack \n
-    Blood Bath – Left + Medium Attack, Heavy Attack Blood Ritual – Right + Medium Attack, Medium Attack, Heavy Attack \n
-    Blood Tears – Light Attack, Light Attack \n
-    Empire of Tears – Right + Medium Attack, Medium Attack \n
-    Five Inversions – Light Attack, Light Attack, Medium Attack, Heavy Attack \n
-    Freshly Dead – Right + Light Attack, Heavy Attack \n
-    Heartless – Light Attack, Light Attack, Light Attack \n
-    Instrument of Vengeance – Medium Attack, Medium Attack \n
-    Return to Ysmault – Right + Medium Attack, Medium Attack, Light Attack + Heavy Attack Sector 666 – Right + Light Attack, Medium Attack \n
-    Simple Betrayal – Light Attack, Light Attack, Medium Attack \n
-    "
-        android:textStyle="normal"
+       android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    </LinearLayout>
-</ScrollView>
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
