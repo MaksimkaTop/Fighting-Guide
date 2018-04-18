@@ -6,14 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#616161"
-    android:fitsSystemWindows="false"
     tools:context="com.example.hp.fightingguide.stories.StoriesActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:fitsSystemWindows="false">
+        android:layout_height="300dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
@@ -38,6 +36,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="20dp"
                 android:fitsSystemWindows="false"
                 android:minHeight="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
@@ -46,6 +45,7 @@
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_stories"
         android:layout_width="match_parent"

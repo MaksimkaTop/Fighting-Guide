@@ -11,6 +11,7 @@ import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.helpers.ReplaceButtons
 import com.example.hp.fightingguide.presenter.ComboPresenter
 import com.example.hp.fightingguide.view.ComboView
+import com.livinglifetechway.k4kotlin.hide
 import kotlinx.android.synthetic.main.combos.*
 
 class CombosActivity : MvpAppCompatActivity(), ComboView {
@@ -20,6 +21,7 @@ class CombosActivity : MvpAppCompatActivity(), ComboView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.combos)
+        pb_combo.hide()
         val nameHero = intent.getStringExtra(getString(R.string.name))
         val iconHero = intent.getStringExtra(getString(R.string.icon))
         val combo = intent.getStringExtra("combo").replace("/n", " ")

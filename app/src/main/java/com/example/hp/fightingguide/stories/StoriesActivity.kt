@@ -8,6 +8,7 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.view.WindowManager
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.bumptech.glide.Glide
@@ -33,6 +34,11 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
         mStoriesData.getStoriesData(this)
         collapsing_toolbar.title = gameName
         appbarImg()
+
+
+//        setTheme(android.R.style.Theme_Black_NoTitleBar_Fullscreen)
+//        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
     }
 
     override fun showError(error: String) {
