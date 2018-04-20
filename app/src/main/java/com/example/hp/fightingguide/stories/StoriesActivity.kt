@@ -40,9 +40,9 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
     override fun getData(data: ArrayList<StoriesData>) {
         val orientationPos = this.resources.configuration.orientation
         if (orientationPos == Configuration.ORIENTATION_PORTRAIT) {
-            rv_stories.layoutManager = GridLayoutManager(this,1)
+            rv_stories.layoutManager = GridLayoutManager(this, 1)
         } else {
-            rv_stories.layoutManager = GridLayoutManager(this,2)
+            rv_stories.layoutManager = GridLayoutManager(this, 2)
         }
         rv_stories.adapter = StoriesRecyclerAdapter(data, this)
         rv_stories.itemAnimator

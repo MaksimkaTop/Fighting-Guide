@@ -20,7 +20,7 @@ class ComboPresenter : MvpPresenter<ComboView>() {
                 .subscribeOn(Schedulers.io())
                 .subscribe({
                     viewState.getData(it)
-                    viewState.showProgressBar(false)
+                     viewState.showProgressBar(false)
                 }, {
                     viewState.showError(context.getString(R.string.wrong_message))
                 })

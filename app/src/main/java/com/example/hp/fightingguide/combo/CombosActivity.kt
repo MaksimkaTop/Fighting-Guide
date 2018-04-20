@@ -10,13 +10,13 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.hp.fightingguide.R
+import com.example.hp.fightingguide.data.StoriesData
 import com.example.hp.fightingguide.presenter.ComboPresenter
 import com.example.hp.fightingguide.view.ComboView
 import kotlinx.android.synthetic.main.combos.*
 
 
 class CombosActivity : MvpAppCompatActivity(), ComboView {
-
 
     @InjectPresenter
     lateinit var mComboData: ComboPresenter
@@ -29,6 +29,7 @@ class CombosActivity : MvpAppCompatActivity(), ComboView {
         val combo = intent.getStringExtra("combo")
         val special = intent.getStringExtra("special")
         tv_combo_name_hero.text = nameHero
+        tv_special_usage.text = special
         mComboData.getComboData(this, combo)
         val imageByteArray = Base64.decode(iconHero, Base64.DEFAULT)
         Glide
@@ -48,6 +49,7 @@ class CombosActivity : MvpAppCompatActivity(), ComboView {
     }
 
     override fun showProgressBar(flag: Boolean) {
+        tv_special_usage.visibility = if (flag) View.INVISIBLE else View.VISIBLE
         tv_combo_combo.visibility = if (flag) View.INVISIBLE else View.VISIBLE
         tv_combo_special.visibility = if (flag) View.INVISIBLE else View.VISIBLE
         pb_combo.visibility = if (flag) View.VISIBLE else View.INVISIBLE
