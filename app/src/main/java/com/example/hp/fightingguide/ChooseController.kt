@@ -27,7 +27,6 @@ class ChooseController : AppCompatActivity() {
             val intent = Intent(this, StoriesActivity::class.java)
             intent.putExtra(getString(R.string.control_type), getString(R.string.ps))
             intent.putExtra(getString(R.string.game), gameName)
-
             startActivity(intent)
 
         }

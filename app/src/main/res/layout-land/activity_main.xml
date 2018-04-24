@@ -6,48 +6,57 @@
     android:layout_height="match_parent"
     android:background="#616161"
     tools:context="com.example.hp.fightingguide.stories.StoriesActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
 
     <ImageView
         android:id="@+id/iv_tekken7"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
+
         android:adjustViewBounds="true"
         android:background="@drawable/ripple"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/iv_injustice2"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_tekken7" />
 
     <ImageView
         android:id="@+id/iv_injustice2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:background="@drawable/ripple"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_tekken7"
-        app:layout_constraintEnd_toStartOf="@+id/iv_mkx"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/iv_tekken7"
-        app:layout_constraintTop_toTopOf="@+id/iv_tekken7"
+        app:layout_constraintEnd_toEndOf="@+id/iv_tekken7"
+        app:layout_constraintStart_toStartOf="@+id/iv_tekken7"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tekken7"
         app:srcCompat="@drawable/injustice_2_logo_le" />
 
     <ImageView
         android:id="@+id/iv_mkx"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:background="@drawable/ripple"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_injustice2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/iv_injustice2"
-        app:layout_constraintTop_toTopOf="@+id/iv_injustice2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/iv_injustice2"
+        app:layout_constraintStart_toStartOf="@+id/iv_injustice2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_injustice2"
         app:srcCompat="@drawable/mk_drakon" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
