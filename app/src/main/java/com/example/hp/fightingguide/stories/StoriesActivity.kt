@@ -10,6 +10,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.bumptech.glide.Glide
 import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.data.StoriesData
+import com.example.hp.fightingguide.helpers.MessageShow
 import com.example.hp.fightingguide.presenter.StoriesPresenter
 import com.example.hp.fightingguide.view.StoriesView
 import kotlinx.android.synthetic.main.activity_stories.*
@@ -34,16 +35,15 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
     }
 
     override fun showError(error: String) {
-        Snackbar.make(stories_activity, error, Snackbar.LENGTH_LONG).show()
+        MessageShow().showSnackbar(stories_activity,error)
     }
 
     override fun getData(data: ArrayList<StoriesData>) {
         val orientationPos = this.resources.configuration.orientation
-        if (orientationPos == Configuration.ORIENTATION_PORTRAIT) {
-            rv_stories.layoutManager = GridLayoutManager(this, 1)
-        } else {
-            rv_stories.layoutManager = GridLayoutManager(this, 2)
-        }
+
+        if (orientationPos == Configuration.ORIENTATION_PORTRAIT) rv_stories.layoutManager = GridLayoutManager(this, 1)
+        else rv_stories.layoutManager = GridLayoutManager(this, 2)
+
         rv_stories.adapter = StoriesRecyclerAdapter(data, this)
         rv_stories.itemAnimator
     }

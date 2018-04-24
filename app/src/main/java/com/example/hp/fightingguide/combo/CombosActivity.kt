@@ -11,8 +11,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.hp.fightingguide.R
 import com.example.hp.fightingguide.data.StoriesData
+import com.example.hp.fightingguide.helpers.MessageShow
 import com.example.hp.fightingguide.presenter.ComboPresenter
 import com.example.hp.fightingguide.view.ComboView
+import kotlinx.android.synthetic.main.activity_stories.*
 import kotlinx.android.synthetic.main.combos.*
 
 
@@ -41,7 +43,7 @@ class CombosActivity : MvpAppCompatActivity(), ComboView {
     }
 
     override fun showError(error: String) {
-        Snackbar.make(iv_combo_icon_hero, error, Snackbar.LENGTH_LONG).show()
+        MessageShow().showSnackbar(iv_combo_icon_hero,error)
     }
 
     override fun getData(data: SpannableString) {
