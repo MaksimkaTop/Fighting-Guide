@@ -1,7 +1,6 @@
 package com.example.hp.fightingguide.combo
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.text.SpannableString
 import android.util.Base64
 import android.view.View
@@ -10,11 +9,11 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.hp.fightingguide.R
-import com.example.hp.fightingguide.data.StoriesData
 import com.example.hp.fightingguide.helpers.MessageShow
 import com.example.hp.fightingguide.presenter.ComboPresenter
 import com.example.hp.fightingguide.view.ComboView
-import kotlinx.android.synthetic.main.activity_stories.*
+import com.jakewharton.rxbinding2.widget.text
+import kotlinx.android.synthetic.main.activity_choose_console.view.*
 import kotlinx.android.synthetic.main.combos.*
 
 
@@ -30,9 +29,11 @@ class CombosActivity : MvpAppCompatActivity(), ComboView {
         val iconHero = intent.getStringExtra(getString(R.string.icon))
         val combo = intent.getStringExtra("combo")
         val special = intent.getStringExtra("special")
+        val console = intent.getStringExtra(getString(R.string.control_type))
+
         tv_combo_name_hero.text = nameHero
         tv_special_usage.text = special
-        mComboData.getComboData(this, combo)
+        mComboData.getComboData(console,this, combo)
         val imageByteArray = Base64.decode(iconHero, Base64.DEFAULT)
         Glide
                 .with(iv_combo_icon_hero)
@@ -43,7 +44,7 @@ class CombosActivity : MvpAppCompatActivity(), ComboView {
     }
 
     override fun showError(error: String) {
-        MessageShow().showSnackbar(iv_combo_icon_hero,error)
+        MessageShow().showSnackbar(iv_combo_icon_hero, error)
     }
 
     override fun getData(data: SpannableString) {

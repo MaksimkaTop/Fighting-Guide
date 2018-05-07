@@ -13,7 +13,7 @@ import com.example.hp.fightingguide.combo.CombosActivity
 import com.example.hp.fightingguide.data.StoriesData
 
 
-class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>, context: Context) : RecyclerView.Adapter<StoriesHolder>() {
+class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>, context: Context, val console: String) : RecyclerView.Adapter<StoriesHolder>() {
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoriesHolder =
             StoriesHolder(LayoutInflater.from(parent.context).inflate(R.layout.stories_card_item, parent, false))
@@ -37,6 +37,7 @@ class StoriesRecyclerAdapter(val data: ArrayList<StoriesData>, context: Context)
             intent.putExtra(holder.icon.context.getString(R.string.icon), data[position].icon)
             intent.putExtra("combo", data[position].combo)
             intent.putExtra("special", data[position].special)
+            intent.putExtra(holder.icon.context.getString(R.string.control_type),console)
             mInflater.context.startActivity(intent)
 
         }

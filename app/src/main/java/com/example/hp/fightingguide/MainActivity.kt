@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
         iv_mkx.setOnClickListener {
             val intent = Intent(this, ChooseController::class.java)
-            intent.putExtra(getString(R.string.game), getString(R.string.mkx))
+            intent.putExtra(getString(R.string.game), getString(R.string.MKX))
             startActivity(intent)
         }
 

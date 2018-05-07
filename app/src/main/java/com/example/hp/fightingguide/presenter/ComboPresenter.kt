@@ -13,9 +13,10 @@ import io.reactivex.schedulers.Schedulers
 
 class ComboPresenter : MvpPresenter<ComboView>() {
 
-    fun getComboData(context: Context, text: String) {
+    fun getComboData(console: String, context: Context, text: String) {
         viewState.showProgressBar(true)
-        ReplaceButtons().replaceSymbolsPS(text, context)
+        if (console == context.getString(R.string.ps))ReplaceButtons().replaceSymbolsPS(text, context)
+        else ReplaceButtons().replaceSymbolsXBX(text, context)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({

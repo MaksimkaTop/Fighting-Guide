@@ -2,7 +2,6 @@ package com.example.hp.fightingguide.stories
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.widget.GridLayoutManager
 import android.view.View
 import com.arellomobile.mvp.MvpAppCompatActivity
@@ -19,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_stories.*
 class StoriesActivity : MvpAppCompatActivity(), StoriesView {
     private var controlType: String = ""
     private var gameName: String = ""
+    private var console: String = ""
     @InjectPresenter
     lateinit var mStoriesData: StoriesPresenter
 
@@ -27,9 +27,10 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
         setContentView(R.layout.activity_stories)
         controlType = intent.getStringExtra(getString(R.string.control_type))
         gameName = intent.getStringExtra(getString(R.string.game))
-        mStoriesData.getStoriesData(this)
-        collapsing_toolbar.title = gameName
-        appbarIcon()
+        console = intent.getStringExtra(getString(R.string.control_type))
+        mStoriesData.getStoriesData(this, gameName)
+        initBackgroungForGame(gameName)
+        collapsing_toolbar.title = gameName.replace("_", " ")
 
 
     }
@@ -44,7 +45,7 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
         if (orientationPos == Configuration.ORIENTATION_PORTRAIT) rv_stories.layoutManager = GridLayoutManager(this, 1)
         else rv_stories.layoutManager = GridLayoutManager(this, 2)
 
-        rv_stories.adapter = StoriesRecyclerAdapter(data, this)
+        rv_stories.adapter = StoriesRecyclerAdapter(data, this, console)
         rv_stories.itemAnimator
     }
 
@@ -52,10 +53,25 @@ class StoriesActivity : MvpAppCompatActivity(), StoriesView {
         pb_stories.visibility = if (flag) View.VISIBLE else View.INVISIBLE
     }
 
-    private fun appbarIcon() {
-        Glide
-                .with(iv_stories_appbar.context)
-                .load(R.drawable.injustice2_all_characters)
-                .into(iv_stories_appbar)
+    private fun initBackgroungForGame(game: String) {
+        if (game == getString(R.string.Injustice2)) {
+            Glide
+                    .with(iv_stories_appbar.context)
+                    .load(R.drawable.injustice2_all_characters)
+                    .into(iv_stories_appbar)
+        }
+        if (game == getString(R.string.Tekken7)) {
+            Glide
+                    .with(iv_stories_appbar.context)
+                    .load(R.drawable.tekken_7_ded)
+                    .into(iv_stories_appbar)
+        }
+        if(game == getString(R.string.MKX)){
+            Glide
+                    .with(iv_stories_appbar.context)
+                    .load(R.drawable.mkk)
+                    .into(iv_stories_appbar)
+        }
+
     }
 }

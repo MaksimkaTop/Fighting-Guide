@@ -12,9 +12,9 @@ import io.reactivex.schedulers.Schedulers
 @InjectViewState
 class StoriesPresenter : MvpPresenter<StoriesView>() {
 
-    fun getStoriesData(context: Context) {
+    fun getStoriesData(context: Context, game : String) {
         viewState.showProgressBar(true)
-        DataRepository().getStoriesData(context)
+        DataRepository().getStoriesData(context, game)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({

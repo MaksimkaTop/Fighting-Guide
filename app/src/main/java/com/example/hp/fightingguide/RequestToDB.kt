@@ -29,7 +29,12 @@ class RequestToDB {
         cursor.moveToFirst()
         while (!cursor.isAfterLast) {
             product += cursor.getString(0) //+ " | "
-            listStories.add(StoriesData(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)))
+            listStories.add(StoriesData(cursor.getString(0)?:"No name",
+                    cursor.getString(1)?:"No Story",
+                    cursor.getString(2)?: context.getString(R.string.empty_icon),
+                    cursor.getString(3)?:"No Combo",
+                    cursor.getString(4)?:"No Special"
+            ))
             cursor.moveToNext()
         }
         cursor.close()
